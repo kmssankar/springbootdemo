@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Configure Issues</title>
+<meta name="viewport">
+
+<link rel="stylesheet"
+	href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet"
+	href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+<link rel="stylesheet" href="./style.css" />
+<script
+	src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+
+</head>
+<body>
+	<div class="mdl-layout mdl-js-layout">
+		<div class="mdl-card mdl-shadow--2dp">
+
+			<div class="mdc-form-field">
+				<form method="post" action="#" th:object="${issueDetail}"
+					th:action="@{/configureissue}">
+					<div
+						class="mdl-card__title mdl-color--primary mdl-color-text--white">
+						Configure Issues/Daily Imprints</div>
+					<div class="mdl-card__supporting-text" th:if="${submitted}">
+						Issue configured successfully</div>
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="issueNameid"
+							th:field="*{issueName}" /> <label class="mdl-textfield__label"
+							for="issueNameid">Issue name</label>
+					</div>
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="issueTypeid"
+							th:field="*{issueType}" /> <label class="mdl-textfield__label"
+							for="issueTypeid">Issue Type</label>
+					</div>
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text"
+							id="issueFrequencyid" th:field="*{issueFrequency}" /> <label
+							class="mdl-textfield__label" for="issueFrequencyid">Issue
+							Frequency</label>
+					</div>
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text"
+							id="issuePublisherid" th:field="*{issuePublisher}" /> <label
+							class="mdl-textfield__label" for="issuePublisherid">Issue
+							Publisher</label>
+					</div>
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="issueOriginid"
+							th:field="*{issueOrigin}" /> <label class="mdl-textfield__label"
+							for="issueOriginid">Issue Origin</label>
+					</div>
+
+					<div
+						class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<textarea class="mdl-textfield__input" type="text" rows="3"
+							id="description" th:field="*{issueAbout}"></textarea>
+						<label class="mdl-textfield__label" for="description">About
+							the Issue</label>
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+						<button
+							class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Submit
+							Issue</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
