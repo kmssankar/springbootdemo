@@ -17,6 +17,11 @@ body {
     left: 0;
  text-align: left;
 }
+.mdl-data-table{
+	font-family: 'PT Sans Narrow', sans-serif;
+    padding: 5px;
+    flex: none;
+}
 .mdl-textfield__input{
 	font-family: 'PT Sans Narrow', sans-serif;
     padding: 5px;

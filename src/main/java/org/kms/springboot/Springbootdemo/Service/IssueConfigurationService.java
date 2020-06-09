@@ -1,6 +1,7 @@
 package org.kms.springboot.Springbootdemo.Service;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -70,5 +71,9 @@ public class IssueConfigurationService {
 				return "No Issue Available to Update " + issueDetail.getIssueId();
 			}
 		return returnMessage;
+	}
+	
+	public List<IssueDetail> getallissues(){
+		return issueDetailRepository.findAll();
 	}
 }

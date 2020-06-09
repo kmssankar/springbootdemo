@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Issue List</title>
+<meta name="viewport">
+<link rel="stylesheet"
+	href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+<link rel="stylesheet" href="./style.css" />
+<script src="./material.js"></script>
+</head>
+<body>
+	<div class="mdl-layout mdl-js-layout">
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--3dp">
+			<thead class="mdl-color--primary mdl-color-text--white">
+				<tr>
+					<th class="mdl-data-table__cell--non-numeric">IssueId</th>
+					<th>Issue Name</th>
+					<th>Issue Type</th>
+					<th>Issue Frequency</th>
+					<th>Issue About</th>
+					<th>Issue Publisher</th>
+					<th>Issue Origin</th>
+					<th>Issue Active</th>
+					<th>Issue LastUpdtTimestamp</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="IssueDetail : ${issues}">
+					<tr>
+						<td class="mdl-data-table__cell--non-numeric"
+							th:text="${IssueDetail.issueId}"></td>
+						<td th:text="${IssueDetail.issueName}"></td>
+						<td th:text="${IssueDetail.issueType}"></td>
+						<td th:text="${IssueDetail.issueFrequency}"></td>
+						<td th:text="${IssueDetail.issueAbout}"></td>
+						<td th:text="${IssueDetail.issuePublisher}"></td>
+						<td th:text="${IssueDetail.issueOrigin}"></td>
+						<td th:text="${IssueDetail.issueActive}"></td>
+						<td th:text="${IssueDetail.lstUpdtTimestamp}"></td>
+					</tr>
+				</th:block>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

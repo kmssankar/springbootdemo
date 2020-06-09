@@ -29,4 +29,9 @@ public class ApplicationController {
 		return "issues/configureIssue";
 	}
 		
+	 @GetMapping("/allissues")
+	    public String getIssues(Model model) {
+	    	model.addAttribute("issues",issueConfigurationService.getallissues());
+	    	return "issues/IssueList";
+	    }
 }
